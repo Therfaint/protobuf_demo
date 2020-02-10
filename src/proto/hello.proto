@@ -1,0 +1,11 @@
+// hello.proto
+package hellopackage;
+syntax = "proto3";
+
+message helloReq {
+    string name = 0;
+}
+
+message helloRes {
+    string hello = 0;
+}

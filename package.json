@@ -6,15 +6,28 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "axios": "^0.19.2",
+    "koa": "^2.11.0",
+    "koa-bodyparser": "^4.2.1",
+    "koa-cors": "^0.0.16",
+    "koa-router": "^7.4.0",
+    "nodemon": "^2.0.2",
+    "protobufjs": "^6.8.8",
+    "raw-body": "^2.4.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-scripts": "3.3.0"
   },
   "scripts": {
     "start": "react-scripts start",
+    "serve": "nodemon ./server.js --inspect",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "proto:json": "pbjs -t json src/proto/*.proto > src/proto/proto.json",
+    "proto:js": "pbjs -t json-module -w commonjs -o src/proto/proto.js  src/proto/*.proto",
+    "proto:es6:js": "pbjs -t json-module -w es6 -o src/proto/proto_es6.js  src/proto/*.proto",
+    "protoc": "yarn run proto:js && yarn run proto:json"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -30,5 +43,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "devDependencies": {}
 }
