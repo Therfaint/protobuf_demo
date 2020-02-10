@@ -27,7 +27,7 @@
     "proto:json": "pbjs -t json src/proto/*.proto > src/proto/proto.json",
     "proto:js": "pbjs -t json-module -w commonjs -o src/proto/proto.js  src/proto/*.proto",
     "proto:es6:js": "pbjs -t json-module -w es6 -o src/proto/proto_es6.js  src/proto/*.proto",
-    "protoc": "yarn run proto:js && yarn run proto:json"
+    "protoc": "yarn run proto:js && yarn run proto:es6:js && yarn run proto:json"
   },
   "eslintConfig": {
     "extends": "react-app"

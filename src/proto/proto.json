@@ -1,0 +1,24 @@
+{
+  "nested": {
+    "hellopackage": {
+      "nested": {
+        "helloReq": {
+          "fields": {
+            "name": {
+              "type": "string",
+              "id": 0
+            }
+          }
+        },
+        "helloRes": {
+          "fields": {
+            "hello": {
+              "type": "string",
+              "id": 0
+            }
+          }
+        }
+      }
+    }
+  }
+}
