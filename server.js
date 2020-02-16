@@ -15,6 +15,10 @@ app.use(bodyParser());
 const helloReq = root.lookupType('hellopackage.helloReq');
 const helloRes = root.lookupType('hellopackage.helloRes');
 
+const sleep = async (time) => {
+    await new Promise(resolve => setTimeout(resolve, time));
+};
+
 // 全局监听抛出的异常
 app.use(async (ctx, next) => {
     try {
@@ -23,7 +27,13 @@ app.use(async (ctx, next) => {
         console.log(e)
         ctx.body = e;
     }
-})
+});
+
+
+router.get('/ping', async (ctx, next) => {
+    await sleep(2500);
+    ctx.body = 'success';
+});
 
 router.post('/api', async (ctx, next) => {
     // handle request payload
